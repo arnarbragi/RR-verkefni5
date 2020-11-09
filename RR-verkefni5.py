@@ -37,11 +37,12 @@ class Node:
         if self.data == d:
             self.prv.nxt = self.nxt
             self.nxt.prv = self.prv
+            return "Successfully deleted :)"
         else:
             if self.nxt == None:
-                pass
+                return "Data not found :("
             else:
-                self.nxt.delete(d)
+                return self.nxt.delete(d)
 
 class DLL:
     # SmiÃ°ur, nÃºllstillir Haus listans
@@ -77,7 +78,7 @@ class DLL:
 
     # EyÃ°ir staki d Ãºr lista ef til -> kallar Ã¡ endurkvÃ¦mnt fall Ã­ Node.
     def delete(self, d):
-        self.head.delete(d)
+        return self.head.delete(d)
 
 # KeyrslurÃºtÃ­na
 dbl = DLL()
@@ -88,7 +89,7 @@ dbl.push(0)             # 0 1 5 7
 dbl.append(10)          # 0 1 5 7 10
 dbl.printList()         
 print()
-dbl.delete(5)   # 0 1 7 10
+print(dbl.delete(5))   # 0 1 7 10
 dbl.printList() 
 print()
 print(dbl.find(5))      # False
